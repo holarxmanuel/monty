@@ -120,16 +120,16 @@ int parse_line(char *buffer, int line_number, int format)
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
-		return format;
+		return (format);
 	value = strtok(NULL, delim);
 
 	if (strcmp(opcode, "stack") == 0)
-		return 0;
+		return (0);
 	if (strcmp(opcode, "queue") == 0)
-		return 1;
+		return (1);
 
 	find_func(opcode, value, line_number, format);
-	return format;
+	return (format);
 }
 
 /**
